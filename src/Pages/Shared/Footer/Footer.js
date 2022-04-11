@@ -4,7 +4,7 @@ const Footer = () => {
     const today = new Date();
     return (
         <footer>
-            <p style={{fontSize:'20px'}}>Copyright &copy; {today.getFullYear()}</p>
+            <p style={{fontSize:'20px'}}>Copyright &copy; {today.getFullYear()} Ahsan Habib</p>
         </footer>
     );
 };
