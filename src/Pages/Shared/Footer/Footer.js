@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     const today = new Date();
     return (
-        <footer>
+        <footer className='text-center mt-5'>
             <p style={{fontSize:'20px'}}>Copyright &copy; {today.getFullYear()} Ahsan Habib</p>
         </footer>
     );
