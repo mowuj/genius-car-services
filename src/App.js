@@ -14,7 +14,7 @@ import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
-  console.log(process.env)
+  
   return (
     <div>
       <Header></Header>
