@@ -14,7 +14,7 @@ const Header = () => {
         <>
   <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark">
   <Container>
-            <Navbar.Brand as={Link} to="/">
+            <Navbar.Brand as={Link} to="/home">
               <img height={30} src={logo} alt="" />
             </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -32,6 +32,7 @@ const Header = () => {
     </Nav>
     <Nav>
       <Nav.Link as={Link} to="about">About</Nav.Link>
+      <Nav.Link as={Link} to="/location">Location</Nav.Link>
       {
         user ? <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>Signout</button>
         :
