@@ -9,6 +9,7 @@ import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
 import axios from 'axios';
+import useToken from '../../../hooks/useToken';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('')
@@ -24,8 +25,10 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-    if (user) {
+    const [token] = useToken(user);
+    if (token) {
         // navigate(from,{replace:true})
+        navigate(from,{replace:true})
     }
     if (loading || sending) {
     return <Loading></Loading>
@@ -40,9 +43,8 @@ const Login = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email,password)
-        const {data} =await axios.post('https://rocky-sea-46908.herokuapp.com/login',{email})
-        localStorage.setItem('accessToken', data.accessToken);
-        navigate(from,{replace:true})
+        
+        
     }
     const navigateRegister = (event) => {
         navigate('/register')
