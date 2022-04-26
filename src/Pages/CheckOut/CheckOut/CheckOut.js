@@ -35,7 +35,7 @@ const CheckOut = () => {
             phone:event.target.value
 
         }
-        axios.post('http://localhost:5000/order', order)
+        axios.post('https://rocky-sea-46908.herokuapp.com/order', order)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
